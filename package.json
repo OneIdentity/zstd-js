@@ -4,6 +4,12 @@
   "description": "Browser side compression library from the official Zstandard library.",
   "main": "lib/index.cjs.js",
   "module": "lib/index.js",
+  "author": "Zsombor Szende - @szendezsombor",
+  "contributors": [
+    "Csaba Tamás - @tamascsaba",
+    "Gergely Szabó - @szaboge",
+    "László Zana - @zanalaci"
+  ],
   "browser": {
     "fs": false,
     "path": false

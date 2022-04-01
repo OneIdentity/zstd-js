@@ -1,0 +1,6 @@
+**/*.log
+**/.idea
+**/node_modules
+/lib
+/tmp
+.husky/_/**

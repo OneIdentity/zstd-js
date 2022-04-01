@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "allowJs": true,
+    "allowSyntheticDefaultImports": true,
+    "baseUrl": ".",
+    "declaration": true,
+    "lib": ["es5", "es6", "dom", "es2015.collection"],
+    "moduleResolution": "node",
+    "outDir": "lib",
+    "sourceMap": true,
+    "strict": true,
+    "strictPropertyInitialization": false,
+    "target": "es5"
+  },
+  "include": ["src", "tmp"],
+  "exclude": ["node_modules"]
+}

@@ -1,0 +1,98 @@
+[
+  {
+    "measures": [
+      {
+        "dataId": 1,
+        "avgTime": 0.8969569003582001
+      },
+      {
+        "dataId": 2,
+        "avgTime": 4.339652498483658
+      },
+      {
+        "dataId": 3,
+        "avgTime": 10.114060000538826
+      },
+      {
+        "dataId": 4,
+        "avgTime": 57.21621459889412
+      }
+    ],
+    "testFunction": {
+      "name": "stream-decompress",
+      "color": "rgba(0,59,70,0.8)"
+    }
+  },
+  {
+    "measures": [
+      {
+        "dataId": 1,
+        "avgTime": 0.29247679710388186
+      },
+      {
+        "dataId": 2,
+        "avgTime": 0.909141497015953
+      },
+      {
+        "dataId": 3,
+        "avgTime": 1.3404620007276535
+      },
+      {
+        "dataId": 4,
+        "avgTime": 3.314700397491455
+      }
+    ],
+    "testFunction": {
+      "name": "simple-decompress",
+      "color": "rgba(7,87,91,0.8)"
+    }
+  },
+  {
+    "measures": [
+      {
+        "dataId": 1,
+        "avgTime": 1.057147899389267
+      },
+      {
+        "dataId": 2,
+        "avgTime": 3.289956900477409
+      },
+      {
+        "dataId": 3,
+        "avgTime": 5.410046600580215
+      },
+      {
+        "dataId": 4,
+        "avgTime": 18.117321001887323
+      }
+    ],
+    "testFunction": {
+      "name": "simple-compress",
+      "color": "rgba(102,165,173,1)"
+    }
+  },
+  {
+    "measures": [
+      {
+        "dataId": 1,
+        "avgTime": 1.5431511019468307
+      },
+      {
+        "dataId": 2,
+        "avgTime": 7.042687497377395
+      },
+      {
+        "dataId": 3,
+        "avgTime": 18.901152699947357
+      },
+      {
+        "dataId": 4,
+        "avgTime": 69.35812239968777
+      }
+    ],
+    "testFunction": {
+      "name": "stream-compress",
+      "color": "rgba(196,223,230,1)"
+    }
+  }
+]

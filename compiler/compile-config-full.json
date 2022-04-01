@@ -1,0 +1,29 @@
+{
+  "compressType": "-O3",
+  "exportedFunctions": [
+    "ZSTD_getErrorName",
+    "ZSTD_isError",
+
+    "ZSTD_createCStream",
+    "ZSTD_freeCStream",
+    "ZSTD_CStreamInSize",
+    "ZSTD_CStreamOutSize",
+    "ZSTD_CCtx_setParameter",
+    "ZSTD_compressStream2_simpleArgs",
+    "ZSTD_initCStream",
+    "ZSTD_freeCStream",
+
+    "ZSTD_DStreamInSize",
+    "ZSTD_DStreamOutSize",
+    "ZSTD_createDStream",
+    "ZSTD_initDStream",
+    "ZSTD_decompressStream_simpleArgs",
+    "ZSTD_freeDStream",
+
+    "ZSTD_compress",
+    "ZSTD_compressBound",
+
+    "ZSTD_decompress",
+    "ZSTD_getFrameContentSize"
+  ]
+}

@@ -1,7 +1,7 @@
 #!/bin/bash
-CONTRIB_DIR="../../node_modules/zstd/contrib/single_file_libs"
-LIB_DIR="../../node_modules/zstd/lib"
-OUT_DIR="../../tmp"
+CONTRIB_DIR="node_modules/zstd/contrib/single_file_libs"
+LIB_DIR="node_modules/zstd/lib"
+OUT_DIR="tmp"
 
 # Clear $OUT_DIR if already exists
 rm -rf $OUT_DIR

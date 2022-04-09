@@ -25,7 +25,9 @@
     "prettier-check": "prettier --check \"**/*.{js,json,css,scss,less,md,ts,html,component.html}\"",
     "prepack": "bash src/bash/prepack.sh",
     "postpack": "bash src/bash/postpack.sh",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "combine": "./src/bash/combine.sh",
+    "compile": "./src/bash/compile.sh"
   },
   "homepage": "https://github.com/OneIdentity/zstd-js",
   "repository": {
@@ -66,7 +68,6 @@
     "d3-node": "^2.2.2",
     "emscripten": "emscripten-core/emsdk.git#v2.0.14",
     "eslint": "^7.20.0",
-    "eslint-plugin-header": "^3.1.1",
     "husky": "^6.0.0",
     "ms": "^2.1.3",
     "prettier": "^2.2.1",

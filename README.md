@@ -90,12 +90,12 @@ For more information, see [Using the packages for the decompress function only](
 
 | Import the following One Identity ZSTD library package: | If you want to provide support for these browsers: | If you want to use the following function: | Module     | Package size |
 | :------------------------------------------------------ | :------------------------------------------------- | :----------------------------------------- | :--------- | :----------- |
-| `@oneindentity/zstd-js`                                    | all browsers                                       | compress and decompress                    | asm & wasm | 2182 kbit    |
-| `@oneindentity/zstd-js/decompress`                         | all browsers                                       | decompress                                 | asm & wasm | 365 kbit     |
-| `@oneindentity/zstd-js/wasm`                               | [modern browsers](#browser-compatibility)          | compress and decompress                    | wasm       | 753 kbit     |
-| `@oneindentity/zstd-js/wasm/decompress`                    | [modern browsers](#browser-compatibility)          | decompress                                 | wasm       | 150 kbit     |
-| `@oneindentity/zstd-js/asm`                                | [legacy browsers](#browser-compatibility)          | compress and decompress                    | asm        | 1439 kbit    |
-| `@oneindentity/zstd-js/asm/decompress`                     | [legacy browsers](#browser-compatibility)          | decompress                                 | asm        | 225 kbit     |
+| `@oneindentity/zstd-js`                                 | all browsers                                       | compress and decompress                    | asm & wasm | 2182 kbit    |
+| `@oneindentity/zstd-js/decompress`                      | all browsers                                       | decompress                                 | asm & wasm | 365 kbit     |
+| `@oneindentity/zstd-js/wasm`                            | [modern browsers](#browser-compatibility)          | compress and decompress                    | wasm       | 753 kbit     |
+| `@oneindentity/zstd-js/wasm/decompress`                 | [modern browsers](#browser-compatibility)          | decompress                                 | wasm       | 150 kbit     |
+| `@oneindentity/zstd-js/asm`                             | [legacy browsers](#browser-compatibility)          | compress and decompress                    | asm        | 1439 kbit    |
+| `@oneindentity/zstd-js/asm/decompress`                  | [legacy browsers](#browser-compatibility)          | decompress                                 | asm        | 225 kbit     |
 
 # Parameters
 

@@ -35,7 +35,7 @@ The One Identity ZSTD library has the following components and functions:
 Before you import and initialize the library packages, run this command in your terminal:
 
 ```shell
-npm install @oneidentity/zstd
+npm install @oneidentity/zstd-js
 ```
 
 # Importing the library packages
@@ -43,7 +43,7 @@ npm install @oneidentity/zstd
 To import the library packages, include the following function in your .js file:
 
 ```ts
-import {ZstdInit} from '@oneidentity/zstd';
+import {ZstdInit} from '@oneidentity/zstd-js';
 ```
 
 # Initializing the library packages
@@ -51,7 +51,7 @@ import {ZstdInit} from '@oneidentity/zstd';
 To initialize the imported library packages, include the following function in your .js file:
 
 ```ts
-import {ZstdInit, ZstdCodec} from '@oneindentity/zstd';
+import {ZstdInit, ZstdCodec} from '@oneindentity/zstd-js';
 
 ZstdInit().then(({ZstdSimple, ZstdStream}: ZstdCodec) => {
   // You can use the library from now
@@ -72,7 +72,7 @@ The One Identity ZSTD library currently supports the following functions:
 
 ## Package limtations
 
-**Note:** If you pull one of the decompress packages (for example @oneidentity/zstd/decompress), using the ZstdCodec interface is not supported.
+**Note:** If you pull one of the decompress packages (for example @oneidentity/zstd-js/decompress), using the ZstdCodec interface is not supported.
 For decompress packages, you can only use the ZstdDec interface, which returns the same object, but you will not be able to use the compress methods on the ZstdSimple and the ZstdStream.
 For more information, see [Using the packages for the decompress function only](#using-the-packages-for-the-decompress-function-only).
 
@@ -90,19 +90,19 @@ For more information, see [Using the packages for the decompress function only](
 
 | Import the following One Identity ZSTD library package: | If you want to provide support for these browsers: | If you want to use the following function: | Module     | Package size |
 | :------------------------------------------------------ | :------------------------------------------------- | :----------------------------------------- | :--------- | :----------- |
-| `@oneindentity/zstd`                                    | all browsers                                       | compress and decompress                    | asm & wasm | 2182 kbit    |
-| `@oneindentity/zstd/decompress`                         | all browsers                                       | decompress                                 | asm & wasm | 365 kbit     |
-| `@oneindentity/zstd/wasm`                               | [modern browsers](#browser-compatibility)          | compress and decompress                    | wasm       | 753 kbit     |
-| `@oneindentity/zstd/wasm/decompress`                    | [modern browsers](#browser-compatibility)          | decompress                                 | wasm       | 150 kbit     |
-| `@oneindentity/zstd/asm`                                | [legacy browsers](#browser-compatibility)          | compress and decompress                    | asm        | 1439 kbit    |
-| `@oneindentity/zstd/asm/decompress`                     | [legacy browsers](#browser-compatibility)          | decompress                                 | asm        | 225 kbit     |
+| `@oneindentity/zstd-js`                                    | all browsers                                       | compress and decompress                    | asm & wasm | 2182 kbit    |
+| `@oneindentity/zstd-js/decompress`                         | all browsers                                       | decompress                                 | asm & wasm | 365 kbit     |
+| `@oneindentity/zstd-js/wasm`                               | [modern browsers](#browser-compatibility)          | compress and decompress                    | wasm       | 753 kbit     |
+| `@oneindentity/zstd-js/wasm/decompress`                    | [modern browsers](#browser-compatibility)          | decompress                                 | wasm       | 150 kbit     |
+| `@oneindentity/zstd-js/asm`                                | [legacy browsers](#browser-compatibility)          | compress and decompress                    | asm        | 1439 kbit    |
+| `@oneindentity/zstd-js/asm/decompress`                     | [legacy browsers](#browser-compatibility)          | decompress                                 | asm        | 225 kbit     |
 
 # Parameters
 
 ## Required parameters
 
 ```ts
-import {ZstdInit, ZstdDec} from '@oneindentity/zstd';
+import {ZstdInit, ZstdDec} from '@oneindentity/zstd-js';
 
 ZstdInit().then(({ZstdSimple, ZstdStream}: ZstdCodec) => {
   // Create some sample data to compress
@@ -121,7 +121,7 @@ ZstdInit().then(({ZstdSimple, ZstdStream}: ZstdCodec) => {
 ## Optional parameters
 
 ```ts
-import {ZstdInit, ZstdDec} from '@oneindentity/zstd';
+import {ZstdInit, ZstdDec} from '@oneindentity/zstd-js';
 
 ZstdInit().then(({ZstdSimple, ZstdStream}: ZstdCodec) => {
   // Create some sample data to compress
@@ -159,14 +159,14 @@ ZstdInit().then(({ZstdSimple, ZstdStream}: ZstdCodec) => {
 - [Using the packages in an asynchronous function with import](#using-the-packages-in-an-asynchronous-function-with-import)
 - [Using the packages for the decompress function only](#using-the-packages-for-the-decompress-function-only)
 
-**Note:** If you pull one of the decompress packages (for example @oneidentity/zstd/decompress), using the ZstdCodec interface is not supported.
+**Note:** If you pull one of the decompress packages (for example @oneidentity/zstd-js/decompress), using the ZstdCodec interface is not supported.
 For decompress packages, you can only use the ZstdDec interface, which returns the same object, but you will not be able to use the compress methods on the ZstdSimple and the ZstdStream.
 For more information, see [Using the packages for the decompress function only](#using-the-packages-for-the-decompress-function-only).
 
 ### Using the packages with promise
 
 ```ts
-import {ZstdInit, ZstdCodec} from '@oneindentity/zstd';
+import {ZstdInit, ZstdCodec} from '@oneindentity/zstd-js';
 
 ZstdInit().then(({ZstdSimple, ZstdStream}: ZstdCodec) => {
   // Create some sample data to compress
@@ -192,7 +192,7 @@ ZstdInit().then(({ZstdSimple, ZstdStream}: ZstdCodec) => {
 ### Using the packages in an asynchronous function
 
 ```ts
-import {ZstdInit, ZstdCodec} from '@oneindentity/zstd';
+import {ZstdInit, ZstdCodec} from '@oneindentity/zstd-js';
 
 (async () => {
   // Save the return value of the init into variables
@@ -221,7 +221,7 @@ import {ZstdInit, ZstdCodec} from '@oneindentity/zstd';
 ### Using the packages in an asynchronous function with import
 
 ```ts
-import {ZstdInit, ZstdSimple, ZstdStream} from '@oneindentity/zstd';
+import {ZstdInit, ZstdSimple, ZstdStream} from '@oneindentity/zstd-js';
 
 (async () => {
   await ZstdInit();
@@ -249,7 +249,7 @@ import {ZstdInit, ZstdSimple, ZstdStream} from '@oneindentity/zstd';
 ### Using the packages for the decompress function only
 
 ```ts
-import {ZstdInit, ZstdDec} from '@oneindentity/zstd/decompress';
+import {ZstdInit, ZstdDec} from '@oneindentity/zstd-js/decompress';
 
 ZstdInit().then(({ZstdSimple, ZstdStream}: ZstdDec) => {
   // Load the compressed data
@@ -302,7 +302,7 @@ If you do not initiate the Zstd library package before using its functions, you 
 For example:
 
 ```ts
-import {ZstdStream} from '@oneindentity/zstd';
+import {ZstdStream} from '@oneindentity/zstd-js';
 
 try {
   ZstdStream.compress(UInt8Array);

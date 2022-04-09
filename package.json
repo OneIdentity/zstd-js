@@ -1,5 +1,5 @@
 {
-  "name": "@oneidentity/zstd",
+  "name": "@oneidentity/zstd-js",
   "version": "1.0.2",
   "description": "Browser side compression library from the official Zstandard library.",
   "main": "lib/index.cjs.js",
@@ -27,9 +27,13 @@
     "postpack": "bash src/bash/postpack.sh",
     "prepare": "husky install"
   },
+  "homepage": "https://github.com/OneIdentity/zstd-js",
   "repository": {
     "type": "git",
-    "url": "git@ssh.dev.azure.com:v3/1id/Common/ZSTD-WASM"
+    "url": "git+https://github.com/OneIdentity/zstd-js.git"
+  },
+  "bugs": {
+    "url": "https://github.com/OneIdentity/zstd-js/issues"
   },
   "keywords": [
     "compress",

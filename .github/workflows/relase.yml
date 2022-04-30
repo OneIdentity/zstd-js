@@ -1,20 +1,26 @@
-name: Lint and Tests
+name: Release
 
 on:
-  push:
-    branches: [main]
-  pull_request:
-    branches: [main]
+  pull_request_target:
+    branches:
+      - 'release/v[1-9]+.[0-9]+.[0-9]+'
+    types:
+      - closed
 
 jobs:
-  build:
+  release:
+    if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     steps:
+      - name: Get branch name
+        id: branch-name
+        uses: tj-actions/branch-names@v5.2
       - uses: actions/checkout@v3
       - name: Use Node.js
         uses: actions/setup-node@v3
         with:
           node-version: '16.x'
+          registry-url: https://registry.npmjs.org/
       - name: Install dependencies
         run: yarn install
       - name: Prettier
@@ -29,5 +35,7 @@ jobs:
         run: yarn build
         env:
           NODE_OPTIONS: --max-old-space-size=7168
-      - name: Test
-        run: yarn test
+      - name: Publish package to npm
+        run: yarn publish --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NODE_AUTH_TOKEN }}

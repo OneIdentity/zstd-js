@@ -1,3 +1,5 @@
+[![npm (scoped)](https://img.shields.io/npm/v/@oneidentity/zstd-js?color=04AADA&label=npm%3A%20%40oneidentity%2Fzstd-js)](https://www.npmjs.com/package/@oneidentity/zstd-js)
+
 # The OneIdentity ZSTD library
 
 [About the One Identity ZSTD library](#about-the-one-identity-zstd-library)  

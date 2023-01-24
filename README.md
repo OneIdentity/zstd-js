@@ -2,39 +2,16 @@
 
 # The OneIdentity ZSTD library
 
-[About the One Identity ZSTD library](#about-the-one-identity-zstd-library)  
-[Library components and their functions](#library-components-and-their-functions)  
-[Prerequisites to using the library packages](#prerequisites-to-using-the-library-packages)  
-[Importing the library packages](#importing-the-library-packages)  
-[Initializing the library packages](#initializing-the-library-packages)  
-[Supported functions and package limitations](#supported-functions-and-package-limitation)  
-[Browser compatibility](#browser-compatibility)  
-[Parameters](#parameters)  
-[Use cases: which library package and module to import](#use-cases:-which-library-package-and-module-to-import)  
-[Performance test details](#performance-test-details)  
-[Troubleshooting](#troubleshooting)  
-[Questions & Answers](#questions--answers)
-
-# About the One Identity ZSTD library
-
 The One Identity ZSTD library is a fast and small browser-side compression library, based on the official Zstandard library.
 Due to its extensive browser support (including Internet Explorer support), the One Identity ZSTD library is also suitable for enterprise environments.
 
-# Library components and their functions
-
-The One Identity ZSTD library is a browser-side compression library, based on the official Zstandard library.
-The One Identity ZSTD library has the following components and functions:
-
-| Component name | Component function                                             | Component description                                                                                                                                                                                                                                                        |
-| -------------- | -------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Zstandard      | Compression algorithm                                          | [Zstandard](https://github.com/facebook/zstd) (abbreviated as zstd) is a fast lossless compression algorithm, targeting real-time compression scenarios at zlib-level and better compression ratios.                                                                         |
-| WebAssembly    | Binary instruction format                                      | [WebAssembly](https://webassembly.org/) (abbreviated Wasm) is a binary instruction format for a stack-based virtual machine. Wasm is designed as a portable compilation target for programming languages, enabling deployment on the web for client and server applications. |
-| asm.js         | An extraordinarily optimizable, low-level subset of JavaScript | The [Assembly](http://asmjs.org/) (abbreviated asm) language used for the One Identity ZSTD library is responsible for breaking down incoming data into system-specific JavaScripts.                                                                                         |
-| Emscripten     | Compiler and wrapper                                           | [Emscripten](https://github.com/emscripten-core/emscripten) compiles C and C++ to WebAssembly using LLVM and Binaryen. Emscripten output can run on the Web, in Node.js, and in wasm runtimes.                                                                               |
-
-# Prerequisites to using the library packages
-
 Before you import and initialize the library packages, run this command in your terminal:
+
+```shell
+yarn add @oneidentity/zstd-js
+```
+
+or
 
 ```shell
 npm install @oneidentity/zstd-js
@@ -53,7 +30,7 @@ import {ZstdInit} from '@oneidentity/zstd-js';
 To initialize the imported library packages, include the following function in your .js file:
 
 ```ts
-import {ZstdInit, ZstdCodec} from '@oneindentity/zstd-js';
+import {ZstdInit, ZstdCodec} from '@oneidentity/zstd-js';
 
 ZstdInit().then(({ZstdSimple, ZstdStream}: ZstdCodec) => {
   // You can use the library from now
@@ -63,48 +40,12 @@ ZstdInit().then(({ZstdSimple, ZstdStream}: ZstdCodec) => {
 **TIP**: Failing to initialize the library packages before using their functions may result in an [initialization issue](#troubleshooting).
 To avoid this, One Identity recommends that you initialize the library packages immediately after you import them.
 
-# Supported functions and package limitations
-
-## Functions
-
-The One Identity ZSTD library currently supports the following functions:
-
-- compress and decompress
-- decompress
-
-## Package limtations
-
-**Note:** If you pull one of the decompress packages (for example @oneidentity/zstd-js/decompress), using the ZstdCodec interface is not supported.
-For decompress packages, you can only use the ZstdDec interface, which returns the same object, but you will not be able to use the compress methods on the ZstdSimple and the ZstdStream.
-For more information, see [Using the packages for the decompress function only](#using-the-packages-for-the-decompress-function-only).
-
-# Browser compatibility
-
-**Modern browsers:** Google Chrome, Firefox, Edge  
-**Legacy browsers:** Internet Explorer (IE)
-
-| ![Chrome](readme/logo/chrome_48x48.png) | ![Firefox](readme/logo/firefox_48x48.png) | ![Edge](readme/logo/edge_48x48.png) | ![IE](readme/logo/ie_48x48.png) |
-| --------------------------------------- | ----------------------------------------- | ----------------------------------- | ------------------------------- |
-| Google Chrome                           | Firefox                                   | Edge                                | IE                              |
-| 55+                                     | 52+                                       | 15+                                 | 10+                             |
-
-# Use cases: which library package and module to import
-
-| Import the following One Identity ZSTD library package: | If you want to provide support for these browsers: | If you want to use the following function: | Module     | Package size |
-| :------------------------------------------------------ | :------------------------------------------------- | :----------------------------------------- | :--------- | :----------- |
-| `@oneindentity/zstd-js`                                 | all browsers                                       | compress and decompress                    | asm & wasm | 2182 kbit    |
-| `@oneindentity/zstd-js/decompress`                      | all browsers                                       | decompress                                 | asm & wasm | 365 kbit     |
-| `@oneindentity/zstd-js/wasm`                            | [modern browsers](#browser-compatibility)          | compress and decompress                    | wasm       | 753 kbit     |
-| `@oneindentity/zstd-js/wasm/decompress`                 | [modern browsers](#browser-compatibility)          | decompress                                 | wasm       | 150 kbit     |
-| `@oneindentity/zstd-js/asm`                             | [legacy browsers](#browser-compatibility)          | compress and decompress                    | asm        | 1439 kbit    |
-| `@oneindentity/zstd-js/asm/decompress`                  | [legacy browsers](#browser-compatibility)          | decompress                                 | asm        | 225 kbit     |
-
 # Parameters
 
 ## Required parameters
 
 ```ts
-import {ZstdInit, ZstdDec} from '@oneindentity/zstd-js';
+import {ZstdInit, ZstdDec} from '@oneidentity/zstd-js';
 
 ZstdInit().then(({ZstdSimple, ZstdStream}: ZstdCodec) => {
   // Create some sample data to compress
@@ -123,7 +64,7 @@ ZstdInit().then(({ZstdSimple, ZstdStream}: ZstdCodec) => {
 ## Optional parameters
 
 ```ts
-import {ZstdInit, ZstdDec} from '@oneindentity/zstd-js';
+import {ZstdInit, ZstdDec} from '@oneidentity/zstd-js';
 
 ZstdInit().then(({ZstdSimple, ZstdStream}: ZstdCodec) => {
   // Create some sample data to compress
@@ -152,6 +93,17 @@ ZstdInit().then(({ZstdSimple, ZstdStream}: ZstdCodec) => {
 });
 ```
 
+# Use cases: which library package and module to import
+
+| Import the following One Identity ZSTD library package: | If you want to provide support for these browsers: | If you want to use the following function: | Module     | Package size |
+| :------------------------------------------------------ | :------------------------------------------------- | :----------------------------------------- | :--------- | :----------- |
+| `@oneidentity/zstd-js`                                  | all browsers                                       | compress and decompress                    | asm & wasm | 2182 kbit    |
+| `@oneidentity/zstd-js/decompress`                       | all browsers                                       | decompress                                 | asm & wasm | 365 kbit     |
+| `@oneidentity/zstd-js/wasm`                             | [modern browsers](#browser-compatibility)          | compress and decompress                    | wasm       | 753 kbit     |
+| `@oneidentity/zstd-js/wasm/decompress`                  | [modern browsers](#browser-compatibility)          | decompress                                 | wasm       | 150 kbit     |
+| `@oneidentity/zstd-js/asm`                              | [legacy browsers](#browser-compatibility)          | compress and decompress                    | asm        | 1439 kbit    |
+| `@oneidentity/zstd-js/asm/decompress`                   | [legacy browsers](#browser-compatibility)          | decompress                                 | asm        | 225 kbit     |
+
 # Example use cases
 
 ## The following examples illustrate how you can use the One Identity ZSTD library packages in the following functions and cases:
@@ -168,7 +120,7 @@ For more information, see [Using the packages for the decompress function only](
 ### Using the packages with promise
 
 ```ts
-import {ZstdInit, ZstdCodec} from '@oneindentity/zstd-js';
+import {ZstdInit, ZstdCodec} from '@oneidentity/zstd-js';
 
 ZstdInit().then(({ZstdSimple, ZstdStream}: ZstdCodec) => {
   // Create some sample data to compress
@@ -194,7 +146,7 @@ ZstdInit().then(({ZstdSimple, ZstdStream}: ZstdCodec) => {
 ### Using the packages in an asynchronous function
 
 ```ts
-import {ZstdInit, ZstdCodec} from '@oneindentity/zstd-js';
+import {ZstdInit, ZstdCodec} from '@oneidentity/zstd-js';
 
 (async () => {
   // Save the return value of the init into variables
@@ -223,7 +175,7 @@ import {ZstdInit, ZstdCodec} from '@oneindentity/zstd-js';
 ### Using the packages in an asynchronous function with import
 
 ```ts
-import {ZstdInit, ZstdSimple, ZstdStream} from '@oneindentity/zstd-js';
+import {ZstdInit, ZstdSimple, ZstdStream} from '@oneidentity/zstd-js';
 
 (async () => {
   await ZstdInit();
@@ -251,7 +203,7 @@ import {ZstdInit, ZstdSimple, ZstdStream} from '@oneindentity/zstd-js';
 ### Using the packages for the decompress function only
 
 ```ts
-import {ZstdInit, ZstdDec} from '@oneindentity/zstd-js/decompress';
+import {ZstdInit, ZstdDec} from '@oneidentity/zstd-js/decompress';
 
 ZstdInit().then(({ZstdSimple, ZstdStream}: ZstdDec) => {
   // Load the compressed data
@@ -267,6 +219,43 @@ ZstdInit().then(({ZstdSimple, ZstdStream}: ZstdDec) => {
   console.log('[Stream]', decompressedStreamData);
 });
 ```
+
+# Library components and their functions
+
+The One Identity ZSTD library is a browser-side compression library, based on the official Zstandard library.
+The One Identity ZSTD library has the following components and functions:
+
+| Component name | Component function                                             | Component description                                                                                                                                                                                                                                                        |
+| -------------- | -------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Zstandard      | Compression algorithm                                          | [Zstandard](https://github.com/facebook/zstd) (abbreviated as zstd) is a fast lossless compression algorithm, targeting real-time compression scenarios at zlib-level and better compression ratios.                                                                         |
+| WebAssembly    | Binary instruction format                                      | [WebAssembly](https://webassembly.org/) (abbreviated Wasm) is a binary instruction format for a stack-based virtual machine. Wasm is designed as a portable compilation target for programming languages, enabling deployment on the web for client and server applications. |
+| asm.js         | An extraordinarily optimizable, low-level subset of JavaScript | The [Assembly](http://asmjs.org/) (abbreviated asm) language used for the One Identity ZSTD library is responsible for breaking down incoming data into system-specific JavaScripts.                                                                                         |
+| Emscripten     | Compiler and wrapper                                           | [Emscripten](https://github.com/emscripten-core/emscripten) compiles C and C++ to WebAssembly using LLVM and Binaryen. Emscripten output can run on the Web, in Node.js, and in wasm runtimes.                                                                               |
+
+# Supported functions and package limitations
+
+## Functions
+
+The One Identity ZSTD library currently supports the following functions:
+
+- compress and decompress
+- decompress
+
+## Package limtations
+
+**Note:** If you pull one of the decompress packages (for example @oneidentity/zstd-js/decompress), using the ZstdCodec interface is not supported.
+For decompress packages, you can only use the ZstdDec interface, which returns the same object, but you will not be able to use the compress methods on the ZstdSimple and the ZstdStream.
+For more information, see [Using the packages for the decompress function only](#using-the-packages-for-the-decompress-function-only).
+
+# Browser compatibility
+
+**Modern browsers:** Google Chrome, Firefox, Edge  
+**Legacy browsers:** Internet Explorer (IE)
+
+| ![Chrome](readme/logo/chrome_48x48.png) | ![Firefox](readme/logo/firefox_48x48.png) | ![Edge](readme/logo/edge_48x48.png) | ![IE](readme/logo/ie_48x48.png) |
+| --------------------------------------- | ----------------------------------------- | ----------------------------------- | ------------------------------- |
+| Google Chrome                           | Firefox                                   | Edge                                | IE                              |
+| 55+                                     | 52+                                       | 15+                                 | 10+                             |
 
 # Performance test details
 
@@ -304,7 +293,7 @@ If you do not initiate the Zstd library package before using its functions, you 
 For example:
 
 ```ts
-import {ZstdStream} from '@oneindentity/zstd-js';
+import {ZstdStream} from '@oneidentity/zstd-js';
 
 try {
   ZstdStream.compress(UInt8Array);

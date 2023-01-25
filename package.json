@@ -27,7 +27,8 @@
     "postpack": "bash src/bash/postpack.sh",
     "prepare": "husky install",
     "combine": "./src/bash/combine.sh",
-    "compile": "./src/bash/compile.sh"
+    "compile": "./src/bash/compile.sh",
+    "setup": "yarn && yarn combine && yarn compile && yarn build"
   },
   "homepage": "https://github.com/OneIdentity/zstd-js",
   "repository": {
